@@ -19,4 +19,8 @@ export class RiskComponent implements OnInit {
   save() {
     this.inputService.input = this.input;
   }
+
+  setRisk(risk : number) {
+    this.input.risk = risk;
+  }
 }

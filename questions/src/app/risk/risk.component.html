@@ -1,15 +1,41 @@
-  Magst du Risiko?
-  <form>
-    <fieldset>
-      <input type="radio" id="low" name="risklevel" value="1" [(ngModel)]="input.risk">
-      <label for="low">Nein, Risiko macht mir Angst.</label><br>
-      <input type="radio" id="medium" name="risklevel" value="2" [(ngModel)]="input.risk" >
-      <label for="medium">Geht so, aber nicht zuviel davon.</label><br>
-      <input type="radio" id="high" name="risklevel" value="3" [(ngModel)]="input.risk">
-      <label for="high">Etwas Risiko hat noch nie geschadet.</label><br>
-      <input type="radio" id="highest" name="risklevel" value="4" [(ngModel)]="input.risk">
-      <label for="highest">Risiko? Was ist Risiko?</label><br>
-    </fieldset>
-    <button routerLink="/amount">Zurück</button>
-    <button routerLink="/recommendation">Weiter</button>
-  </form>
+<h1>Magst du Risiko?</h1>
+<!--<form>
+  <fieldset>
+    <input type="radio" id="low" name="risklevel" value="1" [(ngModel)]="input.risk">
+    <label for="low">Nein, Risiko macht mir Angst.</label><br>
+    <input type="radio" id="medium" name="risklevel" value="2" [(ngModel)]="input.risk" >
+    <label for="medium">Geht so, aber nicht zuviel davon.</label><br>
+    <input type="radio" id="high" name="risklevel" value="3" [(ngModel)]="input.risk">
+    <label for="high">Etwas Risiko hat noch nie geschadet.</label><br>
+    <input type="radio" id="highest" name="risklevel" value="4" [(ngModel)]="input.risk">
+    <label for="highest">Risiko? Was ist Risiko?</label><br>
+  </fieldset>
+  <button routerLink="/amount">Zurück</button>
+  <button routerLink="/recommendation">Weiter</button>
+</form>-->
+
+<div class="row">
+  <div class="col">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" (click)="setRisk(1)" id="list-home-list" href="javascript:void(0)" data-toggle="list"  role="tab" aria-controls="home">
+        Nein, Risiko macht mir Angst
+      </a>
+      <a class="list-group-item list-group-item-action" (click)="setRisk(2)" id="list-profile-list" href="javascript:void(0)" data-toggle="list" role="tab" aria-controls="profile">
+        Geht so, aber nicht zuviel davon.
+      </a>
+      <a class="list-group-item list-group-item-action" (click)="setRisk(3)" id="list-messages-list" href="javascript:void(0)" data-toggle="list" role="tab" aria-controls="messages">
+        Etwas Risiko hat noch nie geschadet.
+      </a>
+      <a class="list-group-item list-group-item-action" (click)="setRisk(4)" id="list-settings-list" href="javascript:void(0)" data-toggle="list" role="tab" aria-controls="settings">
+        Risiko? Was ist Risiko?
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-secondary" routerLink="/amount">Zurück</button>
+    <button type="submit" class="btn btn-primary" routerLink="/recommendation">Weiter</button>
+  </div>
+</div>
