@@ -18,8 +18,6 @@
             <web-resource-name>API</web-resource-name>
             <url-pattern>/api/*</url-pattern>
         </web-resource-collection>
-        <auth-constraint>
-        </auth-constraint>
     </security-constraint>
 
     <security-role>
