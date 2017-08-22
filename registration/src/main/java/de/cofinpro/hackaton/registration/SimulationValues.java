@@ -16,6 +16,9 @@ public class SimulationValues {
     private BigDecimal amount;
     private Integer risk;
 
+    @JsonIgnore
+    private String hash;
+
     public String getId() {
         return id;
     }
@@ -40,5 +43,12 @@ public class SimulationValues {
         this.risk = risk;
     }
 
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
 }
 
