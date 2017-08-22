@@ -5,8 +5,8 @@
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>pages</web-resource-name>
-            <url-pattern>*</url-pattern>
+            <web-resource-name>MVC Frontend</web-resource-name>
+            <url-pattern>/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>user</role-name>
@@ -16,11 +16,13 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>API</web-resource-name>
-            <url-pattern>/api/depot*</url-pattern>
+            <url-pattern>/api/*</url-pattern>
         </web-resource-collection>
-        <auth-constraint>
-        </auth-constraint>
     </security-constraint>
+
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
 
     <servlet>
         <servlet-name>REST</servlet-name>
@@ -34,14 +36,11 @@
             <param-value>/resources/(css|js)/.*</param-value>
         </init-param>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>REST</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
-    
-    <security-role>
-        <role-name>user</role-name>
-    </security-role>
 
     <login-config>
         <auth-method>KEYCLOAK</auth-method>
