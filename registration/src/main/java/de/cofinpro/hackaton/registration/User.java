@@ -4,12 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.ws.rs.FormParam;
+import java.io.Serializable;
 
 /**
  * @author Gregor Tudan, Cofinpro AG
  */
 @Entity
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue

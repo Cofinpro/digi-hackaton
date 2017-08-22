@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>View User</title>
 </head>
 <body>
-<h1>Bestätigung</h1>
+<h1>User ansehen</h1>
 
 <div>
     <span>ID:</span>
@@ -19,7 +19,7 @@
 </div>
 <div>
     <span>User:</span>
-    <span>${user}</span>
+    <span>${user.name}</span>
 </div>
 <div>
     <span>PLZ:</span>
@@ -29,7 +29,6 @@
     <span>Ort:</span>
     <span>${user.city}</span>
 </div>
-
 
 </body>
 </html>

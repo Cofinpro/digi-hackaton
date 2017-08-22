@@ -7,11 +7,13 @@ import {Routes, RouterModule, RouterOutlet} from "@angular/router";
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
 import {AmountComponent} from "./amount/amount.component";
 import {InputService} from "./domain/InputService";
+import { RecommendationComponent } from './recommendation/recommendation.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'amount', pathMatch: 'full'},
   { path: 'amount', component: AmountComponent },
   { path: 'risk', component: RiskComponent },
+  { path: 'recommendation', component: RecommendationComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 
@@ -26,6 +28,6 @@ const appRoutes: Routes = [
   ],
   providers: [InputService],
   bootstrap: [AppComponent],
-  declarations: [AppComponent, AmountComponent, RiskComponent, PagenotfoundComponent]
+  declarations: [AppComponent, AmountComponent, RiskComponent, PagenotfoundComponent, RecommendationComponent]
 })
 export class AppModule { }

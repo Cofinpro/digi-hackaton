@@ -1,12 +1,11 @@
 package de.cofinpro.hackaton.registration.rest.controller;
 
 import de.cofinpro.hackaton.registration.User;
-import de.cofinpro.hackaton.registration.rest.Messages;
+import de.cofinpro.hackaton.registration.rest.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
-import javax.mvc.Models;
 import javax.mvc.annotation.Controller;
 import javax.mvc.annotation.View;
 import javax.mvc.binding.BindingResult;
@@ -25,10 +24,7 @@ public class RegistrationController {
     private BindingResult bindingResult;
 
     @Inject
-    private Models models;
-
-    @Inject
-    private Messages messages;
+    private UserService userService;
 
     @GET
     public String doGet() {
@@ -36,13 +32,12 @@ public class RegistrationController {
     }
 
     @POST
-    public String doSubmit(@BeanParam @NotNull @Valid  User user) {
+    public String doSubmit(@BeanParam @NotNull @Valid User user) {
         if (bindingResult.isFailed()) {
-            models.put("messages", new Messages(bindingResult.getAllMessages()));
             return doGet();
         }
         log.info("User: {}", user);
-        models.put("user", user);
+        userService.setUser(user);
         return "redirect:/confirmation";
     }
 }
