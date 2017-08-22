@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Input} from "../domain/input";
-import {InputService} from "../domain/InputService";
+import {Input} from "../shared/input";
+import {InputService} from "../shared/InputService";
 
 @Component({
   selector: 'app-risk',

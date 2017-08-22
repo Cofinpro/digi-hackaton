@@ -1,7 +1,7 @@
 export class Input {
   private _amount : number;
   private _risk : string;
-
+  private _hash : string;
 
   get amount(): number {
     return this._amount;
@@ -19,7 +19,15 @@ export class Input {
     this._risk = value;
   }
 
+  get hash(): string {
+    return this._hash;
+  }
+
+  set hash(value: string) {
+    this._hash = value;
+  }
+
   toString() {
-    return "Input{amount=" + this._amount + ", risk = " + this.risk + "}";
+    return "Input{amount=" + this._amount + ", risk=" + this.risk + ", hash=" + this._hash + "}";
   }
 }

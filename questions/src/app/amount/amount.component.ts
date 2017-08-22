@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {InputService} from "../domain/InputService";
-import {Input} from "../domain/input";
+import {InputService} from "../shared/InputService";
+import {Input} from "../shared/input";
 
 @Component({
   selector: 'app-amount',
