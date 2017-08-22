@@ -7,4 +7,26 @@
         <class-name>org.h2.jdbcx.JdbcDataSource</class-name>
         <url>jdbc:h2:mem:registration</url>
     </data-source>
+
+    <servlet>
+        <servlet-name>REST</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>de.cofinpro.hackaton.registration</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jersey.config.servlet.filter.staticContentRegex</param-name>
+            <param-value>/resources/(css|js)/.*</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>REST</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <login-config>
+        <auth-method>KEYCLOAK</auth-method>
+        <realm-name>does-not-matter</realm-name>
+    </login-config>
 </web-app>
