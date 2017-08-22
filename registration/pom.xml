@@ -51,6 +51,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <propertiesFile>dev.properties</propertiesFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>
