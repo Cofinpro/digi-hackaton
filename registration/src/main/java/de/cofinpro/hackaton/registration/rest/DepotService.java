@@ -1,13 +1,18 @@
 package de.cofinpro.hackaton.registration.rest;
 
+import javax.servlet.http.HttpServletRequest;
 import de.cofinpro.hackaton.registration.api.DepotRequest;
-import de.cofinpro.hackaton.registration.api.DepotResponse;
+import de.cofinpro.hackaton.registration.controller.RegistrationController;
 import de.cofinpro.hackaton.registration.db.DepotEntity;
 import de.cofinpro.hackaton.registration.services.DepotDAO;
 
 import javax.inject.Inject;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
+import java.net.URI;
 
 /**
  * @author Gregor Tudan, Cofinpro AG
@@ -20,16 +25,22 @@ public class DepotService {
     @Inject
     private DepotDAO depotDAO;
 
+    @Context
+    private HttpServletRequest request;
+
     /**
      * @return The UUID with which to get
      */
     @POST
-    public DepotResponse storeSimulation(DepotRequest request) {
+    public Response storeSimulation( DepotRequest depot) {
         DepotEntity entity = new DepotEntity();
-        entity.setAmount(request.getAmount());
-        entity.setRisk(request.getRisk());
+        entity.setAmount(depot.getAmount());
+        entity.setRisk(depot.getRisk());
         String uuid = depotDAO.saveNewDepot(entity);
-        return new DepotResponse(uuid);
+        URI uri = UriBuilder.fromUri(request.getContextPath())
+                .path("/registration")
+                .queryParam("uuid", uuid).build();
+        return Response.created(uri).build();
     }
 
     @GET
