@@ -23,7 +23,7 @@
 </div>
 <div>
     <span>PLZ:</span>
-    <span>${user.zio}</span>
+    <span>${user.zip}</span>
 </div>
 <div>
     <span>Ort:</span>

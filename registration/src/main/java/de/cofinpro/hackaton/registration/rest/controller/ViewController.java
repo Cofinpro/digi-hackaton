@@ -24,7 +24,7 @@ public class ViewController {
     @GET
     @Path("/{id}")
     public String viewUser(@PathParam("id") @NotNull Long id) {
-        User user = userService.getUser();
+        User user = userService.getUser(id);
 
         models.put("user", user);
         return "/WEB-INF/view.jsp";
