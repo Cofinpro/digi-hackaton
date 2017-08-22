@@ -1,9 +1,17 @@
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.ws.rs.FormParam;
 
 /**
  * @author Gregor Tudan, Cofinpro AG
  */
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue
+    private Long id;
 
     @FormParam("name")
     private String name;
@@ -18,6 +26,14 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setName(String name) {
