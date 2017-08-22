@@ -30,4 +30,8 @@ export class Input {
   toString() {
     return "Input{amount=" + this._amount + ", risk=" + this.risk + ", hash=" + this._hash + "}";
   }
+
+  toJSON() {
+    return JSON.stringify({amount: this._amount, risk: this._risk, hash: this._hash});
+  }
 }

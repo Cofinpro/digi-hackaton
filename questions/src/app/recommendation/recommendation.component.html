@@ -2,6 +2,9 @@
   Hier ist unsere Empfehlung für dich.
   Input: {{ input }}
 </p>
-
-<button routerLink="/risk">Zurück</button>
-<button routerLink="/amount">Noch mal von vorne</button>
+<form>
+  <p>
+    <a routerLink="/">Zurück zum Start</a>
+    <button (click)="register()">Registrieren</button>
+  </p>
+</form>

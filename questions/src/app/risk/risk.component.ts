@@ -9,11 +9,8 @@ import {InputService} from "../shared/InputService";
 })
 export class RiskComponent implements OnInit {
   private input : Input;
-  private inputService : InputService;
 
-  constructor(inputService : InputService) {
-    this.inputService = inputService;
-  }
+  constructor(private inputService : InputService) {}
 
   ngOnInit() {
     this.input = this.inputService.input;
