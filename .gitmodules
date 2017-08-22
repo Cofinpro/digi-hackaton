@@ -1,0 +1,3 @@
+[submodule "wildfly-swarm-ozark"]
+	path = wildfly-swarm-ozark
+	url = git@github.com:dmaidaniuk/wildfly-swarm-ozark.git
