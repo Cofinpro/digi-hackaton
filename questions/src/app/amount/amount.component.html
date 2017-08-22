@@ -1,9 +1,10 @@
 <p>
   Bitte einen Wert angeben.
 </p>
+
 <p>
-  <input type="text" />
+  <input type="text" [(ngModel)]="input.amount" required />
 </p>
 <p>
-  <button routerLink="/risk">Weiter</button>
+  <button (click)="save()" routerLink="/risk">Weiter</button>
 </p>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Input} from "../domain/input";
+import {InputService} from "../domain/InputService";
 
 @Component({
   selector: 'app-risk',
@@ -6,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./risk.component.css']
 })
 export class RiskComponent implements OnInit {
-  risklevel: number;
+  private input : Input;
+  private inputService : InputService;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(inputService : InputService) {
+    this.inputService = inputService;
   }
 
+  ngOnInit() {
+    this.input = this.inputService.input;
+  }
+
+  save() {
+    this.inputService.input = this.input;
+  }
 }
