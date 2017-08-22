@@ -10,14 +10,7 @@ import {LocalStorageService, KEY_HASH} from "./shared/LocalStorageService";
 export class AppComponent {
   title = 'app';
 
-  private hashService : HashService;
-  private localStorageService : LocalStorageService;
-
-
-  constructor(hashService: HashService, localStorageService: LocalStorageService) {
-    this.hashService = hashService;
-    this.localStorageService = localStorageService;
-  }
+  constructor(private hashService: HashService, private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
     let localStorage = this.localStorageService.get();

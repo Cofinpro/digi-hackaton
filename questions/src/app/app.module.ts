@@ -11,6 +11,7 @@ import { RecommendationComponent } from './recommendation/recommendation.compone
 import {LocalStorageService} from "./shared/LocalStorageService";
 import {HashService} from "./shared/HashService";
 import {MathReferenceService} from "./shared/MathReferenceService";
+import {HttpClientModule} from "@angular/common/http";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'amount', pathMatch: 'full'},
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { /*enableTracing: true*/ } // <-- debugging purposes only

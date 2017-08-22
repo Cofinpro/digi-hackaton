@@ -9,17 +9,10 @@ import {Input} from "../shared/input";
 })
 export class AmountComponent implements OnInit {
   private input : Input;
-  private inputService : InputService;
 
-  constructor(inputService : InputService) {
-    this.inputService = inputService;
-  }
+  constructor(private inputService : InputService) {}
 
   ngOnInit() {
     this.input = this.inputService.input;
-  }
-
-  save() {
-    this.inputService.input = this.input;
   }
 }
