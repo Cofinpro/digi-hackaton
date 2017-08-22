@@ -1,7 +1,7 @@
-package de.cofinpro.hackaton.registration.rest.controller;
+package de.cofinpro.hackaton.registration.controller;
 
 import de.cofinpro.hackaton.registration.User;
-import de.cofinpro.hackaton.registration.rest.services.UserService;
+import de.cofinpro.hackaton.registration.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

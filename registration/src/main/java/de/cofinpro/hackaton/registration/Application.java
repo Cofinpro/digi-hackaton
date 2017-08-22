@@ -1,4 +1,4 @@
-package de.cofinpro.hackaton.registration.rest;
+package de.cofinpro.hackaton.registration;
 
 import javax.ws.rs.ApplicationPath;
 

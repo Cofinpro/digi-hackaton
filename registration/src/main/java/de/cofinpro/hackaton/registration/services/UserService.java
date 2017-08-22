@@ -1,4 +1,4 @@
-package de.cofinpro.hackaton.registration.rest.services;
+package de.cofinpro.hackaton.registration.services;
 
 import de.cofinpro.hackaton.registration.User;
 
