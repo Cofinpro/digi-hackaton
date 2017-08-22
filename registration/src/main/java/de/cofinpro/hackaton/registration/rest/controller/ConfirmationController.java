@@ -31,7 +31,8 @@ public class ConfirmationController {
 
     @GET
     public String showConfirm() {
-        models.put("user", userService.getUser());
+        User user = userService.getUser();
+        models.put("user", user);
         return "/WEB-INF/confirmation.jsp";
     }
 }

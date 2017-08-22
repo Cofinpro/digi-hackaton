@@ -29,4 +29,10 @@ public class UserService implements Serializable{
         return entityManager.find(User.class, userId);
     }
 
+    public User getUser(Long id) {
+        this.userId = id;
+        return entityManager.find(User.class, userId);
+    }
+
+
 }
