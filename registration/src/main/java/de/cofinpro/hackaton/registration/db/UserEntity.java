@@ -1,8 +1,8 @@
-package de.cofinpro.hackaton.registration;
+package de.cofinpro.hackaton.registration.db;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.ws.rs.FormParam;
 import java.io.Serializable;
 
@@ -10,11 +10,10 @@ import java.io.Serializable;
  * @author Gregor Tudan, Cofinpro AG
  */
 @Entity
-public class User implements Serializable {
+public class UserEntity implements Serializable {
 
     @Id
-    @GeneratedValue
-    private Long id;
+    private String clientId;
 
     @FormParam("name")
     private String name;
@@ -27,16 +26,19 @@ public class User implements Serializable {
     @FormParam("city")
     private String city;
 
+    @OneToOne
+    private DepotEntity depot;
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
     public String getName() {
         return name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setName(String name) {
@@ -75,15 +77,12 @@ public class User implements Serializable {
         this.city = city;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address1='" + address1 + '\'' +
-                ", address2='" + address2 + '\'' +
-                ", zip='" + zip + '\'' +
-                ", city='" + city + '\'' +
-                '}';
+    public DepotEntity getDepot() {
+        return depot;
     }
+
+    public void setDepot(DepotEntity depot) {
+        this.depot = depot;
+    }
+
 }

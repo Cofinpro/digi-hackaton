@@ -15,19 +15,19 @@
 
 <div>
     <span>ID:</span>
-    <span>${user.id}</span>
+    <span>${userEntity.clientId}</span>
 </div>
 <div>
     <span>User:</span>
-    <span>${user}</span>
+    <span>${userEntity.name}</span>
 </div>
 <div>
     <span>PLZ:</span>
-    <span>${user.zip}</span>
+    <span>${userEntity.zip}</span>
 </div>
 <div>
     <span>Ort:</span>
-    <span>${user.city}</span>
+    <span>${userEntity.city}</span>
 </div>
 
 

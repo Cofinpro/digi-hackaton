@@ -8,24 +8,24 @@
 <form method="post">
     <div>
         <label for="name">Name</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="${user.name}"/>
     </div>
     <div>
         <label for="address1">Addresse</label>
-        <input type="text" id="address1" name="address1"/>
+        <input type="text" id="address1" name="address1" value="${user.address1}"/>
     </div>
     <div>
         <label for="address2"></label>
-        <input type="text" id="address2" name="address2">
+        <input type="text" id="address2" name="address2" value="${user.address2}"/>
     </div>
     <div>
         <span>
         <label for="zip">PLZ</label>
-        <input type="number" maxlength="5" id="zip" name="zip">
+        <input type="number" maxlength="5" id="zip" name="zip" value="${user.zip}"/>
             </span>
         <span>
         <label for="city">Stadt</label>
-        <input type="text" id="city" name="city">
+        <input type="text" id="city" name="city" value="${user.city}"/>
         </span>
     </div>
     <div>

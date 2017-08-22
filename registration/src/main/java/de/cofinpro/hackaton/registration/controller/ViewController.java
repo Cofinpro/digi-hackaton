@@ -1,7 +1,7 @@
 package de.cofinpro.hackaton.registration.controller;
 
-import de.cofinpro.hackaton.registration.User;
-import de.cofinpro.hackaton.registration.services.UserService;
+import de.cofinpro.hackaton.registration.db.UserEntity;
+import de.cofinpro.hackaton.registration.services.UserDAO;
 
 import javax.inject.Inject;
 import javax.mvc.Models;
@@ -19,14 +19,14 @@ public class ViewController {
     private Models models;
 
     @Inject
-    private UserService userService;
+    private UserDAO userDAO;
 
     @GET
-    @Path("/{id}")
-    public String viewUser(@PathParam("id") @NotNull Long id) {
-        User user = userService.getUser(id);
+    @Path("/{clientId}")
+    public String viewUser(@PathParam("clientId") @NotNull String clientId) {
+        UserEntity userEntity = userDAO.getUser(clientId);
 
-        models.put("user", user);
+        models.put("userEntity", userEntity);
         return "/WEB-INF/view.jsp";
     }
 

@@ -1,15 +1,14 @@
-package de.cofinpro.hackaton.registration;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+package de.cofinpro.hackaton.registration.db;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
-public class SimulationValues {
+public class DepotEntity implements Serializable {
 
-    @JsonIgnore
     @Id
     private String id;   // A UUID, not in JSON
 
