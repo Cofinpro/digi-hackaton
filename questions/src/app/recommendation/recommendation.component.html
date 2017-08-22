@@ -1,13 +1,9 @@
 <p>
   Hier ist unsere Empfehlung für dich.
-  Input: {{ input }}
 </p>
 <form>
   <p>
     <a routerLink="/">Zurück zum Start</a>
     <button (click)="register()">Registrieren</button>
-  </p>
-  <p *ngIf="uuidResponse != null">
-    {{ uuidResponse }}
   </p>
 </form>
