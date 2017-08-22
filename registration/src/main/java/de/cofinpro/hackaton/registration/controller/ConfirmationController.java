@@ -1,17 +1,14 @@
-package de.cofinpro.hackaton.registration.rest.controller;
+package de.cofinpro.hackaton.registration.controller;
 
 import de.cofinpro.hackaton.registration.User;
-import de.cofinpro.hackaton.registration.rest.services.UserService;
+import de.cofinpro.hackaton.registration.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.mvc.Models;
 import javax.mvc.annotation.Controller;
-import javax.validation.constraints.NotNull;
-import javax.ws.rs.BeanParam;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 /**
