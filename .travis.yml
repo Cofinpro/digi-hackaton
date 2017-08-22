@@ -1,6 +1,8 @@
 language: java
 script:
 - mvn -f registration/pom.xml clean package
+- mvn -f keycloak-server/pom.xml clean package
+
 cache:
   directories:
   - $HOME/.m2
