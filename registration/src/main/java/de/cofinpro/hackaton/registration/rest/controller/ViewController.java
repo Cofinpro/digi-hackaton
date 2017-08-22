@@ -1,12 +1,11 @@
 package de.cofinpro.hackaton.registration.rest.controller;
 
 import de.cofinpro.hackaton.registration.User;
+import de.cofinpro.hackaton.registration.rest.services.UserService;
 
 import javax.inject.Inject;
 import javax.mvc.Models;
 import javax.mvc.annotation.Controller;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,13 +18,13 @@ public class ViewController {
     @Inject
     private Models models;
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Inject
+    private UserService userService;
 
     @GET
     @Path("/{id}")
     public String viewUser(@PathParam("id") @NotNull Long id) {
-        User user = entityManager.find(User.class, id);
+        User user = userService.getUser();
 
         models.put("user", user);
         return "/WEB-INF/view.jsp";

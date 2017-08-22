@@ -19,7 +19,7 @@
 </div>
 <div>
     <span>User:</span>
-    <span>${user.name}</span>
+    <span>${user}</span>
 </div>
 <div>
     <span>PLZ:</span>
