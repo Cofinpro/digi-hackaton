@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AmountComponent } from './amount/amount.component';
-import { RiskComponent } from './src/app/risk/risk.component';
+import { RiskComponent } from './risk/risk.component';
 
 @NgModule({
   declarations: [
