@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {InputService} from "../domain/InputService";
+import {Input} from "../domain/input";
 
 @Component({
   selector: 'app-recommendation',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recommendation.component.css']
 })
 export class RecommendationComponent implements OnInit {
+  private input : Input;
+  private inputService : InputService;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(inputService : InputService) {
+    this.inputService = inputService;
   }
 
+  ngOnInit() {
+    this.input = this.inputService.input;
+  }
 }

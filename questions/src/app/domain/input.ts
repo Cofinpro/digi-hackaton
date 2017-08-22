@@ -1,6 +1,6 @@
 export class Input {
   private _amount : number;
-  private _risk : number;
+  private _risk : string;
 
 
   get amount(): number {
@@ -11,11 +11,11 @@ export class Input {
     this._amount = value;
   }
 
-  get risk(): number {
+  get risk(): string {
     return this._risk;
   }
 
-  set risk(value: number) {
+  set risk(value: string) {
     this._risk = value;
   }
 
