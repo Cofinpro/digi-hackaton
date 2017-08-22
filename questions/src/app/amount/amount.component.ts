@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {InputService} from "../domain/InputService";
+import {Input} from "../domain/input";
 
 @Component({
   selector: 'app-amount',
@@ -6,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./amount.component.css']
 })
 export class AmountComponent implements OnInit {
-  amount: number;
+  private input : Input;
+  private inputService : InputService;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(inputService : InputService) {
+    this.inputService = inputService;
   }
 
+  ngOnInit() {
+    this.input = this.inputService.input;
+  }
+
+  save() {
+    this.inputService.input = this.input;
+  }
 }
