@@ -12,6 +12,7 @@ import {LocalStorageService} from "./shared/LocalStorageService";
 import {HashService} from "./shared/HashService";
 import {MathReferenceService} from "./shared/MathReferenceService";
 import {HttpClientModule} from "@angular/common/http";
+import {WindowReferenceService} from "./shared/WindowReferenceService";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'amount', pathMatch: 'full'},
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
       { /*enableTracing: true*/ } // <-- debugging purposes only
     )
   ],
-  providers: [InputService, MathReferenceService, LocalStorageService, HashService],
+  providers: [InputService, MathReferenceService, LocalStorageService, HashService, WindowReferenceService],
   bootstrap: [AppComponent],
   declarations: [AppComponent, AmountComponent, RiskComponent, PagenotfoundComponent, RecommendationComponent]
 })
