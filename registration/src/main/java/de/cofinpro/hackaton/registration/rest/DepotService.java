@@ -1,6 +1,7 @@
 package de.cofinpro.hackaton.registration.rest;
 
 import de.cofinpro.hackaton.registration.api.DepotRequest;
+import de.cofinpro.hackaton.registration.api.DepotResponse;
 import de.cofinpro.hackaton.registration.db.DepotEntity;
 import de.cofinpro.hackaton.registration.services.DepotDAO;
 
@@ -17,23 +18,24 @@ import javax.ws.rs.*;
 public class DepotService {
 
     @Inject
-    private DepotDAO simulationValuesService;
+    private DepotDAO depotDAO;
 
     /**
      * @return The UUID with which to get
      */
     @POST
-    public String storeSimulation(DepotRequest request) {
+    public DepotResponse storeSimulation(DepotRequest request) {
         DepotEntity entity = new DepotEntity();
         entity.setAmount(request.getAmount());
         entity.setRisk(request.getRisk());
-        return simulationValuesService.saveNewDepot(entity);
+        String uuid = depotDAO.saveNewDepot(entity);
+        return new DepotResponse(uuid);
     }
 
     @GET
     @Path("/{id}")
     public DepotEntity getSimulation(@PathParam("id") @NotNull String id) {
-        return simulationValuesService.getDepot(id);
+        return depotDAO.getDepot(id);
     }
 
 }
