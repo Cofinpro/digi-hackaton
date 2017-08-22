@@ -8,24 +8,24 @@
 <form name="userdata" action="confirmation" method="post">
     <div>
         <label for="name">Name</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="name"/>
     </div>
     <div>
         <label for="address1">Addresse</label>
-        <input type="text" id="address1"/>
+        <input type="text" id="address1" name="address1"/>
     </div>
     <div>
         <label for="address2"></label>
-        <input type="text" id="address2">
+        <input type="text" id="address2" name="address2"/>
     </div>
     <div>
         <span>
         <label for="zip">PLZ</label>
-        <input type="number" maxlength="5" id="zip">
+        <input type="number" maxlength="5" id="zip" name="zip"/>
             </span>
         <span>
         <label for="city">Stadt</label>
-        <input type="text" id="city">
+        <input type="text" id="city" name="city"/>
         </span>
     </div>
     <div>
