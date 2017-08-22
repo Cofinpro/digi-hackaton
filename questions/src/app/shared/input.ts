@@ -32,6 +32,6 @@ export class Input {
   }
 
   toJSON() {
-    return JSON.stringify({amount: this._amount, risk: this._risk, hash: this._hash});
+    return JSON.stringify({amount: this._amount, risk: this._risk/*, hash: this._hash*/});
   }
 }

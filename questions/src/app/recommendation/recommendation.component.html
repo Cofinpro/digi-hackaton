@@ -7,4 +7,7 @@
     <a routerLink="/">Zurück zum Start</a>
     <button (click)="register()">Registrieren</button>
   </p>
+  <p *ngIf="uuidResponse != null">
+    {{ uuidResponse }}
+  </p>
 </form>
