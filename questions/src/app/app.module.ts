@@ -2,7 +2,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
 import {AppComponent} from "./app.component";
 import {RiskComponent} from "./risk/risk.component";
-import {Routes, RouterModule} from "@angular/router";
+import {Routes, RouterModule, RouterOutlet} from "@angular/router";
 import {PagenotfoundComponent} from "./pagenotfound/pagenotfound.component";
 import {AmountComponent} from "./amount/amount.component";
 
