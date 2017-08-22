@@ -3,6 +3,7 @@ package de.cofinpro.hackaton.registration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
@@ -15,6 +16,9 @@ public class MainExceptionMapper implements ExceptionMapper<Throwable> {
     @Override
     public Response toResponse(Throwable exception) {
         LOGGER.error("JERSEY ERROR: {}", exception.getMessage(), exception);
+        if (exception instanceof WebApplicationException) {
+            return ((WebApplicationException) exception).getResponse();
+        }
         return Response.serverError().entity(exception).build();
     }
 
