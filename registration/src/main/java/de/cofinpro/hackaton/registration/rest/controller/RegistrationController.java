@@ -4,7 +4,6 @@ import javax.mvc.annotation.Controller;
 import javax.ws.rs.Path;
 import javax.ws.rs.GET;
 
-
 @Controller
 @Path("/registration")
 public class RegistrationController {

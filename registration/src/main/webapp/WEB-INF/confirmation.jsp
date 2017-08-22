@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Bestätigung</h1>
 
+<div>
+    <span>User:</span>
+    <span>${user.name}</span>
+</div>
 </body>
 </html>

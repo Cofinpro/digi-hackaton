@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Deine Daten</h1>
-<form name="userdata" action="confirmation">
+<form name="userdata" action="confirmation" method="post">
     <div>
         <label for="name">Name</label>
         <input type="text" id="name">
@@ -20,13 +20,16 @@
     </div>
     <div>
         <span>
-        <label for="zip"></label>
+        <label for="zip">PLZ</label>
         <input type="number" maxlength="5" id="zip">
             </span>
         <span>
-        <label for="city"></label>
+        <label for="city">Stadt</label>
         <input type="text" id="city">
         </span>
+    </div>
+    <div>
+        <button type="submit">Weiter</button>
     </div>
 </form>
 </body>
