@@ -25,10 +25,9 @@ export class RecommendationComponent implements OnInit {
   }
 
   register() {
-    /*console.log("Registering... --> 172.29.21.197:8161/api/message/digimon?type=queue");
     console.log("Schicke folgenden JSON-Body: " + this.input.toJSON());
-    let authString = "Basic " + btoa("admin:admin");
-    console.log("Base64-Encoded Auth: " + authString);*/
+    //let authString = "Basic " + btoa("admin:admin");
+    //console.log("Base64-Encoded Auth: " + authString);*/
     let headers = new HttpHeaders().set("Accept", "application/json").set("Content-Type", "application/json");
     this.http.post<UUIDResponse>("http://localhost:8080/api/depot", this.input.toJSON(), {headers: headers}).subscribe(data => {
       this.uuidResponse = data.uuid;

@@ -1,10 +1,7 @@
-<p>
-  Bitte einen Wert angeben.
-</p>
-
-<p>
-  <input type="text" [(ngModel)]="input.amount" required />
-</p>
-<p>
-  <button routerLink="/risk">Weiter</button>
-</p>
+<form>
+  <div class="form-group">
+    <label for="amount">Bitte einen Wert angeben</label>
+    <input type="text" required name="amount" id="amount" class="form-control" [(ngModel)]="input.amount"/>
+  </div>
+  <button type="submit" class="btn btn-primary" routerLink="/risk">Weiter</button>
+</form>
