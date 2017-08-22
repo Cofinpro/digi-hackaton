@@ -1,12 +1,15 @@
 package de.cofinpro.hackaton.registration.rest.controller;
 
 import de.cofinpro.hackaton.registration.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.mvc.Models;
 import javax.mvc.annotation.Controller;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.BeanParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
@@ -20,9 +23,10 @@ public class ConfirmationController {
     @Inject
     private Models models;
 
-    @POST
-    public String showConfirm(@NotNull @BeanParam User user) {
-        models.put("user", user);
+    private Logger log = LoggerFactory.getLogger(getClass());
+
+    @GET
+    public String showConfirm() {
         return "/WEB-INF/confirmation.jsp";
     }
 }

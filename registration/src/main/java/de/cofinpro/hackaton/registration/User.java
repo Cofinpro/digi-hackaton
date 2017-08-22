@@ -73,4 +73,16 @@ public class User {
     public void setCity(String city) {
         this.city = city;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address1='" + address1 + '\'' +
+                ", address2='" + address2 + '\'' +
+                ", zip='" + zip + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
 }
