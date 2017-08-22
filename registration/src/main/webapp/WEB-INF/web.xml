@@ -2,11 +2,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <data-source>
-        <name>java:jboss/datasources/registration</name>
-        <class-name>org.h2.jdbcx.JdbcDataSource</class-name>
-        <url>jdbc:h2:mem:registration</url>
-    </data-source>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>pages</web-resource-name>
+            <url-pattern>*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>API</web-resource-name>
+            <url-pattern>/api/depot*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+        </auth-constraint>
+    </security-constraint>
 
     <servlet>
         <servlet-name>REST</servlet-name>
@@ -24,9 +38,19 @@
         <servlet-name>REST</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+    
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
 
     <login-config>
         <auth-method>KEYCLOAK</auth-method>
         <realm-name>does-not-matter</realm-name>
     </login-config>
+
+    <data-source>
+        <name>java:jboss/datasources/registration</name>
+        <class-name>org.h2.jdbcx.JdbcDataSource</class-name>
+        <url>jdbc:h2:mem:registration</url>
+    </data-source>
 </web-app>
