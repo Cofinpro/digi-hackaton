@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/skeleton-css/2.0.4/css/normalize.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/webjars/skeleton-css/2.0.4/css/skeleton.css">
 </head>
 <body>
 <h1>Bestätigung</h1>
