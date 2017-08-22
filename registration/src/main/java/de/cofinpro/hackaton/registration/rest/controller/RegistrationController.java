@@ -33,8 +33,8 @@ public class RegistrationController {
 
     @POST
     public String doSubmit(@BeanParam @NotNull @Valid User user) {
-        if () {
-            return doGet();bindingResult.isFailed()
+        if (bindingResult.isFailed()) {
+            return doGet();
         }
         log.info("User: {}", user);
         userService.setUser(user);
