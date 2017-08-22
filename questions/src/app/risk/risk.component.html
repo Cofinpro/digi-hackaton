@@ -1,13 +1,13 @@
-  Magst du Risiko?
+  Magst du Risiko? --> WERT = {{ input }}
   <form>
     <fieldset>
-      <input type="radio" id="low" name="risklevel" value="low">
+      <input type="radio" id="low" name="risklevel" value="low" [(ngModel)]="input.risk">
       <label for="low">Nein, Risiko macht mir Angst.</label><br>
-      <input type="radio" id="medium" name="risklevel" value="medium">
+      <input type="radio" id="medium" name="risklevel" value="medium" [(ngModel)]="input.risk" >
       <label for="medium">Geht so, aber nicht zuviel davon.</label><br>
-      <input type="radio" id="high" name="risklevel" value="high">
+      <input type="radio" id="high" name="risklevel" value="high" [(ngModel)]="input.risk">
       <label for="high">Etwas Risiko hat noch nie geschadet.</label><br>
-      <input type="radio" id="highest" name="risklevel" value="highest">
+      <input type="radio" id="highest" name="risklevel" value="highest" [(ngModel)]="input.risk">
       <label for="highest">Risiko? Was ist Risiko?</label><br>
     </fieldset>
     <button routerLink="/amount">Zurück</button>
