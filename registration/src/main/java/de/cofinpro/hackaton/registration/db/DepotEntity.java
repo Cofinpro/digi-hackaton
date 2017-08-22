@@ -15,6 +15,9 @@ public class DepotEntity implements Serializable {
     private BigDecimal amount;
     private Integer risk;
 
+    @JsonIgnore
+    private String hash;
+
     public String getId() {
         return id;
     }
@@ -39,5 +42,12 @@ public class DepotEntity implements Serializable {
         this.risk = risk;
     }
 
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
 }
 

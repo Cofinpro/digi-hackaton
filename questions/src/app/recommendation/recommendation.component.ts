@@ -26,11 +26,12 @@ export class RecommendationComponent implements OnInit {
     console.log("Schicke folgenden JSON-Body: " + this.input.toJSON());
     let authString = "Basic " + btoa("admin:admin");
     console.log("Base64-Encoded Auth: " + authString);
-    /*this.http.post("http://172.29.21.197:8161/api/message/digi.angular?type=queue", this.input.toJSON(), {headers: new HttpHeaders().set('Authorization', authString)}).subscribe((data) => {
+    let headers = new HttpHeaders().set("Accept", "application/json").set("Content-Type", "application/json");
+    this.http.post("http://localhost:8080/api/depot", this.input.toJSON(), {headers: headers}).subscribe((data) => {
+      console.log(data);
+    });
+    /*this.http.post("http://admin:admin@172.29.21.197:8161/api/message?destination=queue://digi.angular", this.input.toJSON()).subscribe((data) => {
       console.log(data);
     })*/
-    this.http.post("http://admin:admin@172.29.21.197:8161/api/message?destination=queue://digi.angular", this.input.toJSON()).subscribe((data) => {
-      console.log(data);
-    })
   }
 }
