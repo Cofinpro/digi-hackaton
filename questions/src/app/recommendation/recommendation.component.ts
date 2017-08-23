@@ -30,7 +30,11 @@ export class RecommendationComponent implements OnInit {
       this.input.toJSON(),
       {headers: headers, observe: 'response'}
     ).subscribe(response => {
-      window.location.href = response.headers['Location'];
+      let targetLocation = response.headers.get('Location');
+      console.log("Received redirect target: " + targetLocation);
+      console.log(response);
+      console.log(response.headers);
+      window.location.href = targetLocation;
     });
   }
 }

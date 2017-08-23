@@ -40,7 +40,11 @@ public class DepotService {
         URI uri = UriBuilder.fromUri(request.getContextPath())
                 .path("/registration")
                 .queryParam("uuid", uuid).build();
-        return Response.created(uri).build();
+        return Response.created(uri)
+                .header("Access-Control-Expose-Headers", "Location") // benötigt, da JS sonst nicht wegen CORS auf den Header zugreifen kann
+                .header("Access-Control-Allow-Origin", "http://localhost:4200")
+                .header("Access-Control-Allow-Headers", "Location, Content-Type")
+                .build();
     }
 
     @GET
