@@ -36,5 +36,15 @@ services:
             - "8080:8080"
         networks:
             - webnet
+    questions:
+        image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/questions:latest"
+        ports:
+            - "5000:80"
+    reverseproxy:
+        image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackaton/reverse_proxy:latest"
+        ports:
+            - "80:80"
+        networks:
+            - webnet
 networks:
     webnet:
