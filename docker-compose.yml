@@ -30,6 +30,8 @@ services:
     registration:
         build: ./registration
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
+        environment:
+            - KEYCLOAK_AUTH_SERVER=http://ec2-35-158-93-72.eu-central-1.compute.amazonaws.com/auth
         depends_on:
             - db
         deploy:
