@@ -20,7 +20,6 @@ services:
             - webnet
     db:
         image: library/postgres:latest
-            - "5432:5432"
         environment:
             - POSTGRES_USER=registration
             - POSTGRES_PASSWORD=registration
@@ -28,15 +27,24 @@ services:
         networks:
             - webnet
     registration:
+        build: ./registration
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
+        depends_on:
+            - db
         networks:
             - webnet
     questions:
+        build: ./questions
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/questions:latest"
-        ports:
-            - "5000:80"
+        networks:
+            - webnet
     reverseproxy:
+        build: ./reverse-proxy
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackaton/reverse_proxy:latest"
+        depends_on:
+            - registration
+            - questions
+            - keycloak
         ports:
             - "80:80"
         networks:
