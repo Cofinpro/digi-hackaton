@@ -24,6 +24,7 @@ export class RecommendationComponent implements OnInit {
   }
 
   register() {
+    console.log("Schicke POST-Request zu http://registration:8080/api/depot");
     let headers = new HttpHeaders().set("Accept", "application/json").set("Content-Type", "application/json");
     this.http.post(
       "http://registration:8080/api/depot",
