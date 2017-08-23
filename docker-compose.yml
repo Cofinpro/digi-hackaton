@@ -11,11 +11,20 @@ services:
                 constraints: [node.role == manager]
         networks:
             - webnet
+    keycloak:
+        image: jboss/keycloak
+        ports:
+            - "8180:8080"
+        environment:
+            - KEYCLOAK_USER=admin
+            - KEYCLOAK_PASSWORD=admin
+        networks:
+            - webnet
     registration:
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
         ports:
             - "8080:8080"
         networks:
-            - webnet  
+            - webnet
 networks:
     webnet:
