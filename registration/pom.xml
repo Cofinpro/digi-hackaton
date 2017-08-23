@@ -98,6 +98,7 @@
             <artifactId>keycloak</artifactId>
         </dependency>
 
+
         <!-- Java EE 7 dependency -->
         <dependency>
             <groupId>javax</groupId>

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Deine Daten</h1>
-<form method="post">
+<form method="pos¡t">
     <div>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" value="${user.name}"/>
