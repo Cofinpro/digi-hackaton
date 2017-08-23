@@ -1,0 +1,21 @@
+version: "3"
+services:
+    visualizer:
+        image: dockersamples/visualizer:stable
+        ports:
+            - "81:8080"
+        volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
+        deploy:
+            placement:
+                constraints: [node.role == manager]
+        networks:
+            - webnet
+    registration:
+        image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
+        ports:
+            - "8080:8080"
+        networks:
+            - webnet  
+networks:
+    webnet:
