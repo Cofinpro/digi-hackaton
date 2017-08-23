@@ -29,6 +29,8 @@ services:
             - webnet
     registration:
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
+        deploy:
+            replicas: 2
         networks:
             - webnet
     questions:
