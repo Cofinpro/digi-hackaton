@@ -20,6 +20,14 @@
         </web-resource-collection>
     </security-constraint>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Static files</web-resource-name>
+            <url-pattern>/webjars/*</url-pattern>
+            <url-pattern>/(css|js)/*</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+
     <security-role>
         <role-name>user</role-name>
     </security-role>
@@ -33,7 +41,11 @@
         </init-param>
         <init-param>
             <param-name>jersey.config.servlet.filter.staticContentRegex</param-name>
-            <param-value>/resources/(css|js)/.*</param-value>
+            <param-value>/webjars/.*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jersey.config.servlet.filter.forwardOn404</param-name>
+            <param-value>true</param-value>
         </init-param>
     </servlet>
 
