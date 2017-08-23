@@ -26,7 +26,7 @@ export class RecommendationComponent implements OnInit {
   register() {
     let headers = new HttpHeaders().set("Accept", "application/json").set("Content-Type", "application/json");
     this.http.post(
-      "http://localhost:8080/api/depot",
+      "http://registration:8080/api/depot",
       this.input.toJSON(),
       {headers: headers, observe: 'response'}
     ).subscribe(response => {
