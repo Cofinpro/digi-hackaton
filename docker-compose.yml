@@ -20,6 +20,16 @@ services:
             - KEYCLOAK_PASSWORD=admin
         networks:
             - webnet
+    db:
+        image: library/postgres:latest
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=registration
+            - POSTGRES_PASSWORD=registration
+            - POSTGRES_DB=registration
+        networks:
+            - webnet
     registration:
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
         ports:
