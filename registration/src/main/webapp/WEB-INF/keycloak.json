@@ -1,6 +1,6 @@
 {
   "realm": "master",
-  "auth-server-url": "${KEYCLOAK_AUTH_SERVER}",
+  "auth-server-url": "${env.KEYCLOAK_AUTH_SERVER}",
   "ssl-required": "none",
   "resource": "registration",
   "public-client": true,
