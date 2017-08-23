@@ -31,6 +31,8 @@ services:
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
         depends_on:
             - db
+        deploy:
+            replicas: 2
         networks:
             - webnet
     questions:

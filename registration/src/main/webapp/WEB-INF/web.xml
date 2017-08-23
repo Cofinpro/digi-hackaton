@@ -61,7 +61,9 @@
 
     <data-source>
         <name>java:jboss/datasources/registration</name>
-        <class-name>org.h2.jdbcx.JdbcDataSource</class-name>
-        <url>jdbc:h2:mem:registration</url>
+        <class-name>org.postgresql.ds.PGPoolingDataSource</class-name>
+        <url>jdbc:postgresql://db:5432/registration</url>
+        <user>registration</user>
+        <password>registration</password>
     </data-source>
 </web-app>

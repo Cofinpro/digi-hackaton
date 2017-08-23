@@ -5,7 +5,7 @@
              version="2.1">
 
     <persistence-unit name="registration" transaction-type="JTA">
-        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+        <jta-data-source>java:jboss/datasources/registration</jta-data-source>
         <properties>
             <property name="hibernate.show_sql" value="true" />
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
