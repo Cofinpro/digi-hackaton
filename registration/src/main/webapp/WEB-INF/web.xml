@@ -59,11 +59,12 @@
         <realm-name>does-not-matter</realm-name>
     </login-config>
 
+    <!--
     <data-source>
         <name>java:jboss/datasources/registration</name>
-        <class-name>org.postgresql.ds.PGPoolingDataSource</class-name>
         <url>jdbc:postgresql://db:5432/registration</url>
         <user>registration</user>
         <password>registration</password>
     </data-source>
+    -->
 </web-app>

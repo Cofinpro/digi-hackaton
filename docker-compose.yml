@@ -32,6 +32,10 @@ services:
         image: "567106281522.dkr.ecr.eu-central-1.amazonaws.com/hackathon/registration:latest"
         environment:
             - KEYCLOAK_AUTH_SERVER=http://ec2-35-158-93-72.eu-central-1.compute.amazonaws.com/auth
+            - swarm.datasources.data-sources.RegistrationDS.driver-name=postgresql
+            - swarm.datasources.data-sources.RegistrationDS.connection-url=jdbc:postgresql://db:5432/registration
+            - swarm.datasources.data-sources.RegistrationDS.user-name=registration
+            - swarm.datasources.data-sources.RegistrationDS.password=registration
         depends_on:
             - db
         deploy:
