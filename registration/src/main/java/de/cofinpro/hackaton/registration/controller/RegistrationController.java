@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 
 @Controller
-@Path("/registration")
+@Path("/")
 @View("/WEB-INF/registration.jsp")
 public class RegistrationController {
 
@@ -73,7 +73,7 @@ public class RegistrationController {
         user.setZip(personalData.getZip());
         user.setCity(personalData.getCity());
         userDAO.saveUser(user);
-        return "redirect:/confirmation";
+        return "redirect:/registration/confirmation";
     }
 
     private String getClientIdFromToken() {
